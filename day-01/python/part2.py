@@ -1,7 +1,9 @@
 # Calculate fuel per module as per README
+# Same as in part 1
 def calculate_fuel(mass):
     return (mass // 3) - 2
 
+# Recursively calculate fuel required for additional fuel
 def calculate_total_fuel(mass):
     required_fuel = calculate_fuel(mass)
     total_fuel = 0
