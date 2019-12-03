@@ -8,9 +8,8 @@ def read_from_input():
         intcode_list = [int(i) for i in intcode_string.split(",")]
         return intcode_list
 
-def return_four():
-    return 4
-
 # Given a list of intcode, resolve it into its final form
-def process_intcode(intcode):
+def process_intcode(intcode_input):
+    # Clone the list, to prevent any spooky mutability shenanigans
+    intcode = intcode_input[:]
     return intcode
