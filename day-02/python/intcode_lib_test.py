@@ -1,5 +1,5 @@
 import unittest 
-from intcode_lib import process_intcode
+from intcode_lib import process_intcode, extract_answer
 
 class IntcodeLibTest(unittest.TestCase): 
     def testProcessIntcode1(self):
@@ -27,6 +27,9 @@ class IntcodeLibTest(unittest.TestCase):
         intcode_input = [1,1,1,4,99,5,6,0,99]
         intcode_output = [30,1,1,4,2,5,6,0,99]
         self.assertTrue(process_intcode(intcode_input) == intcode_output)
+
+    def testExtractAnswer(self):
+        self.assertTrue(extract_answer([12,2]) == 1202)
 
 if __name__ == '__main__': 
     unittest.main() 

@@ -39,3 +39,7 @@ def process_intcode(intcode_input):
 
     return intcode
 
+# input is noun_and_verb, a tuple of two ints
+def extract_answer(noun_and_verb):
+    noun, verb = noun_and_verb
+    return (100 * noun) + verb
