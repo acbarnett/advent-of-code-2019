@@ -1,5 +1,3 @@
-import sys
-
 # Set up constants
 WIDTH = 25
 HEIGHT = 6

@@ -1,5 +1,3 @@
-from itertools import repeat
-
 # Set up constants
 WIDTH = 25
 HEIGHT = 6
@@ -18,22 +16,14 @@ while idx < len(unlayered_pixel_values):
     layers.append(unlayered_pixel_values[idx:(idx + LAYER_SIZE)])
     idx += LAYER_SIZE
 
-#image = list(repeat(list(repeat("2", WIDTH)), HEIGHT))
-
-image = []
-for i in range(0, HEIGHT):
-    image.append(list(repeat("2", WIDTH)))
-
-print(image)
-
-
-
+# For each y, for each x, look at all layers
+# When a non-transparent layer is found, if it's black, display a " "
+# If white, display a 1 and break out of the loop
+# Print all of the characters for a row on one line, then add a newline
 for y in range(0, HEIGHT):
     for x in range(0, WIDTH):
-        color = "2"
         for layer in layers:
             target_pixel = y * WIDTH + x
-            #print(layer[target_pixel])
             if layer[target_pixel] != "2":
                 color = layer[target_pixel]
                 if color == "0":
@@ -41,32 +31,3 @@ for y in range(0, HEIGHT):
                 print(color, end="")
                 break
     print("")
-                
-        
-#for x in range(0, width):
-#for y in range(0, height)
-
-#print(image[24][2])
-#print(image[2][24])
-
-#layer_ct = len(layers)
-#for y in range(0, HEIGHT):
-#    for x in range(0, WIDTH):
-#        color = 0
-#        for layer in layers:
-            #print(layer)
- #           target_pixel = layer[y * WIDTH + x]
-#            if target_pixel != "2":
-   #             color = target_pixel
-  #              break
-#        print(target_pixel, end = '')
-        #print([y,x,color])
-#    print("")
-    #    image[y][x] = color
-
-
-#for row in image:
-#    row_as_strs = [str(px) for px in row]
-#    print("".join(row_as_strs))
-
-#
